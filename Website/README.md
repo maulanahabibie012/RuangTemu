@@ -9,12 +9,12 @@ Platform gathering & komunitas — **web-first MVP**.
 
 ## Docs
 
-- [PRD](./docs/product-requirements.md)
-- [Implementation plan](./docs/implementation-plan.md)
-- [Biaya deploy (gratis → berbayar)](./docs/deployment-cost-scenarios.md)
-- [Phase 0 Test Report](./docs/phase-0-test-report.md)
-- [Phase 1 Test Report](./docs/phase-1-test-report.md)
-- UI rules: `../docs/ui-ux-design-rules.md`
+- [PRD](../docs/web/product-requirements.md)
+- [Implementation plan](../docs/web/implementation-plan.md)
+- [Biaya deploy (gratis → berbayar)](../docs/web/deployment-cost-scenarios.md)
+- [Phase 0 Test Report](../docs/web/phase-0-test-report.md)
+- [Phase 1 Test Report](../docs/web/phase-1-test-report.md)
+- UI rules: `../docs/shared/ui-ux-design-rules.md`
 
 
 ## Quick start (Skenario A — lokal gratis)

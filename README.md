@@ -8,10 +8,9 @@ Platform gathering & komunitas — menghubungkan orang dengan acara lokal yang b
 RuangTemu/
 ├── Website/          # Web platform (Next.js + NestJS)
 │   ├── apps/web/     # Frontend — Next.js 15 + Tailwind CSS v4
-│   ├── apps/api/     # Backend — NestJS
-│   └── docs/         # Dokumentasi web
+│   └── apps/api/     # Backend — NestJS
 ├── Mobile/           # iOS app (Swift/SwiftUI)
-└── docs/             # Dokumentasi umum (PRD, UI/UX rules, dll.)
+└── docs/             # Dokumentasi terpusat (Web, Mobile, Shared)
 ```
 
 ## Web Platform
@@ -52,14 +51,21 @@ cd Website/apps/api && npm run test:e2e
 
 ## Dokumentasi
 
-- [Product Requirements (PRD)](docs/product-requirements.md)
-- [Implementation Plan](docs/implementation-plan.md)
-- [UI/UX Design Rules](docs/ui-ux-design-rules.md)
-- [Web PRD](Website/docs/product-requirements.md)
-- [Web Implementation Plan](Website/docs/implementation-plan.md)
-- [Deployment & Cost Scenarios](Website/docs/deployment-cost-scenarios.md)
-- [Phase 0 Test Report](Website/docs/phase-0-test-report.md)
-- [Phase 1 Test Report](Website/docs/phase-1-test-report.md)
+**Shared**
+- [UI/UX Design Rules](docs/shared/ui-ux-design-rules.md)
+- [Ponytail Coding Rules](docs/shared/ponytail-coding-rules.md)
+- [Claude Fable5 Best Practices](docs/shared/claude-fable5-best-practices.md)
+
+**Web Platform**
+- [Web PRD](docs/web/product-requirements.md)
+- [Web Implementation Plan](docs/web/implementation-plan.md)
+- [Deployment & Cost Scenarios](docs/web/deployment-cost-scenarios.md)
+- [Phase 0 Test Report](docs/web/phase-0-test-report.md)
+- [Phase 1 Test Report](docs/web/phase-1-test-report.md)
+
+**Mobile Platform (iOS)**
+- [Mobile PRD](docs/mobile/product-requirements.md)
+- [Mobile Implementation Plan](docs/mobile/implementation-plan.md)
 
 ## Phase Status
 
