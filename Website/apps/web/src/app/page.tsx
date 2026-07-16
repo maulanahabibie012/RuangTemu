@@ -3,10 +3,28 @@ import { ArrowRight, Compass, Sparkles, Users } from "lucide-react";
 import { EventCard } from "@/components/event/event-card";
 import { Button } from "@/components/ui/button";
 import { CATEGORIES, DEMO_EVENTS } from "@/lib/demo-events";
+import { getPopularEvents, getEvents } from "@/lib/events-api";
 
-export default function HomePage() {
-  const popular = DEMO_EVENTS.slice(0, 3);
-  const upcoming = DEMO_EVENTS;
+export default async function HomePage() {
+  let popular;
+  let upcoming;
+
+  try {
+    const [popularApi, upcomingApi] = await Promise.all([
+      getPopularEvents(),
+      getEvents({ limit: "6" }),
+    ]);
+    popular = popularApi.length > 0 ? popularApi.slice(0, 3) : null;
+    upcoming = upcomingApi.data.length > 0 ? upcomingApi.data : null;
+  } catch {
+    // API down — fallback to demo
+    popular = null;
+    upcoming = null;
+  }
+
+  const popularEvents = popular ?? DEMO_EVENTS.slice(0, 3);
+  const upcomingEvents = upcoming ?? DEMO_EVENTS;
+  const isDemo = !popular;
 
   return (
     <div className="bg-background">
@@ -16,7 +34,7 @@ export default function HomePage() {
           <div className="flex-1 space-y-6">
             <p className="inline-flex items-center gap-2 rounded-full bg-surface-elevated px-3 py-1 text-xs font-medium text-primary shadow-sm ring-1 ring-border">
               <Sparkles className="size-3.5" aria-hidden />
-              Demo MVP · Web first
+              {isDemo ? "Demo MVP · Web first" : "Live · RuangTemu"}
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.15]">
               Temukan gathering yang{" "}
@@ -42,11 +60,11 @@ export default function HomePage() {
             <dl className="grid grid-cols-3 gap-4 pt-2 text-center sm:max-w-md sm:text-left">
               <div>
                 <dt className="text-xs text-muted">Kategori</dt>
-                <dd className="text-lg font-semibold text-foreground">6+</dd>
+                <dd className="text-lg font-semibold text-foreground">{CATEGORIES.length - 1}+</dd>
               </div>
               <div>
-                <dt className="text-xs text-muted">Demo event</dt>
-                <dd className="text-lg font-semibold text-foreground">{DEMO_EVENTS.length}</dd>
+                <dt className="text-xs text-muted">Event</dt>
+                <dd className="text-lg font-semibold text-foreground">{upcomingEvents.length}</dd>
               </div>
               <div>
                 <dt className="text-xs text-muted">Mode</dt>
@@ -77,7 +95,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p id="home-search-hint" className="text-xs text-muted">
-              Search penuh menyusul di Phase 2 — tombol mengarah ke /search.
+              Klik &ldquo;Cari&rdquo; untuk ke halaman pencarian lengkap.
             </p>
             <ul className="mt-2 grid gap-3 sm:grid-cols-3">
               <li className="flex items-start gap-2 rounded-[var(--radius-md)] bg-surface p-3 text-sm">
@@ -134,14 +152,14 @@ export default function HomePage() {
             <p className="mt-1 text-sm text-muted">Gathering yang sedang ramai diminati</p>
           </div>
           <Link
-            href="/search"
+            href="/search?sort=popular"
             className="text-sm font-medium text-primary hover:underline"
           >
             Lihat semua
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {popular.map((event) => (
+          {popularEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
@@ -161,11 +179,13 @@ export default function HomePage() {
               >
                 Segera dimulai
               </h2>
-              <p className="mt-1 text-sm text-muted">Data demo — API NestJS menyusul</p>
+              <p className="mt-1 text-sm text-muted">
+                {isDemo ? "Data demo — API segera aktif" : "Event terbaru"}
+              </p>
             </div>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {upcoming.map((event) => (
+            {upcomingEvents.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>

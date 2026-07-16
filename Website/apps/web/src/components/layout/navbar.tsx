@@ -14,6 +14,7 @@ const publicLinks = [
 ];
 
 const authLinks = [
+  { href: "/my-events", label: "Event saya" },
   { href: "/my-tickets", label: "Tiket saya" },
 ];
 
@@ -63,7 +64,7 @@ export function Navbar() {
               <Search className="size-4" />
             </Button>
           </Link>
-          <Link href="/organizer/events/new">
+          <Link href="/events/create">
             <Button size="sm" className="gap-1.5">
               <CalendarPlus className="size-4" />
               Buat Event
@@ -138,7 +139,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/organizer/events/new"
+            href="/events/create"
             className="flex items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm font-medium text-primary"
             onClick={() => setOpen(false)}
           >

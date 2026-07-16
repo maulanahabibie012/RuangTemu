@@ -255,7 +255,7 @@ users
 
 ---
 
-## Phase 2: Discovery & Event Detail (Sprint 3)
+## Phase 2: Discovery & Event Detail (Sprint 3) — ✅ COMPLETED
 
 ### 2.1 Pages
 
@@ -548,7 +548,7 @@ users ──┬── events ──┬── registrations ── payments
 | S1 | Setup | Next.js + NestJS + Prisma + Tailwind **+ light/dark theme** |
 
 | S2 | Auth | ✅ API JWT, profil, role routes, UI (Selesai) |
-| S3 | Discovery | Home, search, SSR event detail |
+| S3 | Discovery | ✅ Home, search, event detail, CRUD, my-events (Selesai) |
 | S4 | RSVP/Pay | Free+paid, Midtrans, e-tiket |
 | S5 | Organizer | Builder, peserta, check-in web |
 | S6 | Chat | Socket.io |

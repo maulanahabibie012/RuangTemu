@@ -29,5 +29,62 @@ model User {
   createdAt            DateTime @default(now()) @map("created_at")
   updatedAt            DateTime @updatedAt @map("updated_at")
 
+  events               Event[]  @relation("OrganizerEvents")
+
   @@map("users")
+}
+
+enum TicketType {
+  FREE
+  PAID
+}
+
+enum EventStatus {
+  DRAFT
+  ACTIVE
+  FULL
+  CANCELLED
+  COMPLETED
+}
+
+enum EventCategory {
+  TECHNOLOGY
+  MUSIC
+  SPORTS
+  EDUCATION
+  BUSINESS
+  ART
+  FOOD
+  HEALTH
+  SOCIAL
+  OTHER
+}
+
+model Event {
+  id              String        @id @default(uuid())
+  organizerId     String        @map("organizer_id")
+  title           String
+  description     String
+  category        EventCategory @default(OTHER)
+  coverImageUrl   String?       @map("cover_image_url")
+  locationName    String        @map("location_name")
+  locationLat     Float?        @map("location_lat")
+  locationLng     Float?        @map("location_lng")
+  eventDate       DateTime      @map("event_date")
+  eventEndDate    DateTime?     @map("event_end_date")
+  maxCapacity     Int           @map("max_capacity")
+  currentCount    Int           @default(0) @map("current_count")
+  ticketType      TicketType    @default(FREE) @map("ticket_type")
+  ticketPrice     Int           @default(0) @map("ticket_price")
+  status          EventStatus   @default(DRAFT)
+  createdAt       DateTime      @default(now()) @map("created_at")
+  updatedAt       DateTime      @updatedAt @map("updated_at")
+
+  organizer       User          @relation("OrganizerEvents", fields: [organizerId], references: [id])
+
+  @@index([category])
+  @@index([status])
+  @@index([eventDate])
+  @@index([organizerId])
+  @@map("events")
 }

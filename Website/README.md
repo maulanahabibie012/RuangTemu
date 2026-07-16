@@ -14,6 +14,7 @@ Platform gathering & komunitas — **web-first MVP**.
 - [Biaya deploy (gratis → berbayar)](../docs/web/deployment-cost-scenarios.md)
 - [Phase 0 Test Report](../docs/web/phase-0-test-report.md)
 - [Phase 1 Test Report](../docs/web/phase-1-test-report.md)
+- [Phase 2 Test Report](docs/phase-2-test-report.md)
 - UI rules: `../docs/shared/ui-ux-design-rules.md`
 
 
