@@ -1,4 +1,4 @@
-tersebut ke dalams,# RuangTemu Web
+# RuangTemu Web
 
 Platform gathering & komunitas — **web-first MVP**.
 
