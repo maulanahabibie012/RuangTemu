@@ -356,7 +356,7 @@ Detail teknis deploy: `Website/docs/implementation-plan.md` → **Deployment Str
 |--------|-------|-------------|
 | S1 | Setup | Next.js + NestJS + Prisma + Tailwind tokens + **theme light/dark** |
 
-| S2 | Auth | Login/register, cookie JWT, profil |
+| S2 | Auth | ✅ Login/register, cookie JWT, profil (Selesai) |
 | S3 | Discovery | Home, search, event detail SSR |
 | S4 | RSVP & pay | Free RSVP, hold, Midtrans, e-tiket |
 | S5 | Organizer | Builder, peserta, check-in web |
