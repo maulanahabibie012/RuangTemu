@@ -158,7 +158,9 @@ export const typography = {
 
 ---
 
-## Phase 1: Authentication & User Profile (Sprint 2 — 1 minggu)
+## Phase 1: Authentication & User Profile (Sprint 2 — 1 minggu) — ✅ COMPLETED
+
+*(Selesai: Semua API Auth, Middleware Next.js, Zustand Store, Interceptor Axios, Halaman Login/Register/Verify/Forgot/Profile terintegrasi penuh di versi Web. Backend API juga siap digunakan untuk Mobile.)*
 
 ### 1.1 Screens (Mobile)
 
@@ -590,7 +592,7 @@ users ──────┬──── events (organizer_id)
 | Sprint | Phase | Durasi | Deliverable |
 |--------|-------|--------|-------------|
 | S1 | Phase 0: Setup | 1 minggu | Expo app + NestJS API + Prisma + PostgreSQL + design tokens |
-| S2 | Phase 1: Auth | 1 minggu | Register/login JWT, profile, role guards |
+| S2 | Phase 1: Auth | 1 minggu | ✅ Register/login JWT, profile, role guards (Selesai) |
 | S3 | Phase 2: Discovery | 1.5 minggu | Home, search, event detail, geo filter |
 | S4 | Phase 3: RSVP & Payment | 1.5 minggu | Hold kuota, Midtrans, e-tiket QR |
 | S5 | Phase 4: Organizer | 1.5 minggu | Event builder, dashboard, check-in |
