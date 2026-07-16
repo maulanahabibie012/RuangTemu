@@ -59,13 +59,14 @@ cd Website/apps/api && npm run test:e2e
 - [Web Implementation Plan](Website/docs/implementation-plan.md)
 - [Deployment & Cost Scenarios](Website/docs/deployment-cost-scenarios.md)
 - [Phase 0 Test Report](Website/docs/phase-0-test-report.md)
+- [Phase 1 Test Report](Website/docs/phase-1-test-report.md)
 
 ## Phase Status
 
 | Phase | Status |
 |-------|--------|
 | 0 — Setup + Shell UI + Design Tokens + Light/Dark | ✅ Done |
-| 1 — Auth | ⏳ Pending |
+| 1 — Auth | ✅ Done |
 | 2 — Discovery API | ⏳ Pending |
 | 3+ — RSVP / Pay / Organizer | ⏳ Pending |
 
