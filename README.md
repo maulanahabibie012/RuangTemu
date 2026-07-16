@@ -10,7 +10,7 @@ RuangTemu/
 │   ├── apps/web/     # Frontend — Next.js 15 + Tailwind CSS v4
 │   ├── apps/api/     # Backend — NestJS
 │   └── docs/         # Dokumentasi web
-├── RuangTemu/        # iOS app (Swift/SwiftUI)
+├── Mobile/           # iOS app (Swift/SwiftUI)
 └── docs/             # Dokumentasi umum (PRD, UI/UX rules, dll.)
 ```
 
