@@ -1,7 +1,7 @@
 n# RuangTemu Web — Product Requirements Document (PRD)
 
 > Platform dua sisi (two-sided marketplace) untuk gathering & komunitas — **versi Web**  
-> Versi: 1.0-web — diadaptasi dari `docs/product-requirements.md` (mobile) + implementation plan  
+> Versi: 1.0-web — diadaptasi dari `docs/mobile/product-requirements.md` (mobile) + implementation plan  
 > Stack: **Next.js (React/TS)** + **NestJS (Node.js/TS)** + **PostgreSQL**
 
 ---
@@ -272,10 +272,10 @@ Payment: `pending` | `success` | `failed` | `expired`
 | **QR scan** | html5-qrcode |
 | **Charts** | Recharts (organizer analytics) |
 
-**UI/UX rules:** sesuaikan dari `docs/ui-ux-design-rules.md` (spacing, warna, tipografi) ke CSS/Tailwind.  
-**Coding:** `docs/ponytail-coding-rules.md`  
-**Practices:** `docs/claude-fable5-best-practices.md`  
-**Plan teknis:** `Website/docs/implementation-plan.md`
+**UI/UX rules:** sesuaikan dari `docs/shared/ui-ux-design-rules.md` (spacing, warna, tipografi) ke CSS/Tailwind.  
+**Coding:** `docs/shared/ponytail-coding-rules.md`  
+**Practices:** `docs/shared/claude-fable5-best-practices.md`  
+**Plan teknis:** `docs/web/implementation-plan.md`
 
 ---
 
@@ -315,8 +315,8 @@ Payment: `pending` | `success` | `failed` | `expired`
 | Payment | Midtrans **Sandbox** | Midtrans **Production** (ganti keys) |
 
 **Migrasi gratis → berbayar:** ganti hosting + env vars (+ dump/restore DB bila perlu). **Kode app & schema tetap.**  
-Detail biaya & checklist: `Website/docs/deployment-cost-scenarios.md`  
-Detail teknis deploy: `Website/docs/implementation-plan.md` → **Deployment Strategy**.
+Detail biaya & checklist: `docs/web/deployment-cost-scenarios.md`  
+Detail teknis deploy: `docs/web/implementation-plan.md` → **Deployment Strategy**.
 
 
 ---
@@ -380,12 +380,12 @@ Detail teknis deploy: `Website/docs/implementation-plan.md` → **Deployment Str
 
 | Dokumen | Lokasi |
 |---------|--------|
-| Implementation Plan (Web) | `Website/docs/implementation-plan.md` |
-| Biaya & skenario deploy (A–D) | `Website/docs/deployment-cost-scenarios.md` |
-| PRD Mobile (referensi) | `docs/product-requirements.md` |
-| Plan Mobile (referensi) | `docs/implementation-plan.md` |
-| UI/UX Rules | `docs/ui-ux-design-rules.md` |
-| Coding Rules | `docs/ponytail-coding-rules.md` |
+| Implementation Plan (Web) | `docs/web/implementation-plan.md` |
+| Biaya & skenario deploy (A–D) | `docs/web/deployment-cost-scenarios.md` |
+| PRD Mobile (referensi) | `docs/mobile/product-requirements.md` |
+| Plan Mobile (referensi) | `docs/mobile/implementation-plan.md` |
+| UI/UX Rules | `docs/shared/ui-ux-design-rules.md` |
+| Coding Rules | `docs/shared/ponytail-coding-rules.md` |
 
 ---
 

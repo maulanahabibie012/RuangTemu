@@ -1,7 +1,7 @@
 # RuangTemu — Implementation Plan
 
 > Rencana implementasi detail untuk React Native (Expo) + NestJS (Node.js + TypeScript) + PostgreSQL  
-> Referensi: docs/product-requirements.md  
+> Referensi: docs/mobile/product-requirements.md  
 > **Stack fix:** Frontend Expo · Backend NestJS · DB PostgreSQL · Payment Midtrans
 
 ---
@@ -115,7 +115,7 @@ RuangTemu/
 
 ### 0.4 Design System Setup
 
-Berdasarkan `docs/ui-ux-design-rules.md`:
+Berdasarkan `docs/shared/ui-ux-design-rules.md`:
 
 ```typescript
 // apps/mobile/constants/theme.ts

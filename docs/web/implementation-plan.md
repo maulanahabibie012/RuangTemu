@@ -1,7 +1,7 @@
 # RuangTemu Web — Implementation Plan
 
 > Rencana implementasi **aplikasi web**  
-> Referensi produk: `Website/docs/product-requirements.md`  
+> Referensi produk: `docs/web/product-requirements.md`  
 > **Stack:** Next.js (React/TS) · NestJS (Node.js/TS) · PostgreSQL · Midtrans
 
 ---
@@ -143,7 +143,7 @@ Website/
 
 ### 0.4 Design Tokens (Tailwind) + Theme
 
-Selaras `docs/ui-ux-design-rules.md` §1 Color & §10 Dark Mode:
+Selaras `docs/shared/ui-ux-design-rules.md` §1 Color & §10 Dark Mode:
 
 **Implementasi aktual (Phase 0):**
 
@@ -601,8 +601,8 @@ users ──┬── events ──┬── registrations ── payments
 
 ## Deployment Strategy (Best Practice)
 
-> **Biaya lengkap (A/B/C/D):** `Website/docs/deployment-cost-scenarios.md`  
-> **PRD:** keputusan demo gratis di `Website/docs/product-requirements.md` §10
+> **Biaya lengkap (A/B/C/D):** `docs/web/deployment-cost-scenarios.md`  
+> **PRD:** keputusan demo gratis di `docs/web/product-requirements.md` §10
 
 Arsitektur **portable**: ganti host/env, **bukan rewrite** kode.
 

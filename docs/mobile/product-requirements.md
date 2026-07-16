@@ -1,7 +1,7 @@
 # RuangTemu — Product Requirements Document (PRD)
 
 > Platform dua sisi (two-sided marketplace) untuk gathering & komunitas  
-> Versi: 1.1 — diselaraskan dengan `docs/implementation-plan.md`  
+> Versi: 1.1 — diselaraskan dengan `docs/mobile/implementation-plan.md`  
 > Stack: React Native (Expo) + NestJS (Node.js/TS) + PostgreSQL
 
 ---
@@ -229,10 +229,10 @@ Selaras dengan schema di implementation plan:
 | Maps | Google Maps API + react-native-maps |
 | Email | Resend / Nodemailer |
 
-**Referensi implementasi detail:** `docs/implementation-plan.md`  
-**UI/UX:** `docs/ui-ux-design-rules.md`  
-**Coding:** `docs/ponytail-coding-rules.md`  
-**Practices:** `docs/claude-fable5-best-practices.md`
+**Referensi implementasi detail:** `docs/mobile/implementation-plan.md`  
+**UI/UX:** `docs/shared/ui-ux-design-rules.md`  
+**Coding:** `docs/shared/ponytail-coding-rules.md`  
+**Practices:** `docs/shared/claude-fable5-best-practices.md`
 
 ---
 
@@ -307,10 +307,10 @@ Selaras dengan schema di implementation plan:
 
 | Dokumen | Isi |
 |---------|-----|
-| `docs/implementation-plan.md` | Arsitektur, API, schema, sprint teknis |
-| `docs/ui-ux-design-rules.md` | Design tokens & aturan UI |
-| `docs/ponytail-coding-rules.md` | Prinsip coding efisien |
-| `docs/claude-fable5-best-practices.md` | Best practices development |
+| `docs/mobile/implementation-plan.md` | Arsitektur, API, schema, sprint teknis |
+| `docs/shared/ui-ux-design-rules.md` | Design tokens & aturan UI |
+| `docs/shared/ponytail-coding-rules.md` | Prinsip coding efisien |
+| `docs/shared/claude-fable5-best-practices.md` | Best practices development |
 
 ---
 

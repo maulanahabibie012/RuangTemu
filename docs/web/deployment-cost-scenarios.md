@@ -1,7 +1,7 @@
 # RuangTemu Web — Skenario Biaya & Deployment
 
 > Panduan memilih stack hosting berdasarkan budget  
-> Referensi: `Website/docs/implementation-plan.md` (Deployment Strategy)  
+> Referensi: `docs/web/implementation-plan.md` (Deployment Strategy)  
 > Update: Maret 2026 — **selalu cek harga resmi** (free tier sering berubah)
 
 ---
@@ -372,9 +372,9 @@ A: Saat Skenario C / mau Midtrans production & cookie rapi. Demo cukup `*.vercel
 
 | File | Isi |
 |------|-----|
-| `Website/docs/implementation-plan.md` | Deployment Strategy teknis |
-| `Website/docs/product-requirements.md` | Requirement produk web |
-| `docs/ui-ux-design-rules.md` | UI tokens |
+| `docs/web/implementation-plan.md` | Deployment Strategy teknis |
+| `docs/web/product-requirements.md` | Requirement produk web |
+| `docs/shared/ui-ux-design-rules.md` | UI tokens |
 
 ---
 
