@@ -62,6 +62,7 @@ cd Website/apps/api && npm run test:e2e
 - [Deployment & Cost Scenarios](docs/web/deployment-cost-scenarios.md)
 - [Phase 0 Test Report](docs/web/phase-0-test-report.md)
 - [Phase 1 Test Report](docs/web/phase-1-test-report.md)
+- [Phase 2 Test Report](docs/web/phase-2-test-report.md)
 
 **Mobile Platform (iOS)**
 - [Mobile PRD](docs/mobile/product-requirements.md)
@@ -72,9 +73,13 @@ cd Website/apps/api && npm run test:e2e
 | Phase | Status |
 |-------|--------|
 | 0 — Setup + Shell UI + Design Tokens + Light/Dark | ✅ Done |
-| 1 — Auth | ✅ Done |
-| 2 — Discovery API | ⏳ Pending |
-| 3+ — RSVP / Pay / Organizer | ⏳ Pending |
+| 1 — Auth & Profile | ✅ Done |
+| 2 — Discovery & Events (API + Frontend CRUD) | ✅ Done |
+| 3 — RSVP, Payment & E-Ticket | 🔜 Next |
+| 4 — Organizer Dashboard | ⏳ Pending |
+| 5 — Chat | ⏳ Pending |
+| 6 — Post-Event & Moderation | ⏳ Pending |
+| 7 — Notifications & Polish | ⏳ Pending |
 
 ## Tech Stack
 
