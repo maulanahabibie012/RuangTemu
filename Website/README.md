@@ -13,6 +13,7 @@ Platform gathering & komunitas — **web-first MVP**.
 - [Implementation plan](./docs/implementation-plan.md)
 - [Biaya deploy (gratis → berbayar)](./docs/deployment-cost-scenarios.md)
 - [Phase 0 Test Report](./docs/phase-0-test-report.md)
+- [Phase 1 Test Report](./docs/phase-1-test-report.md)
 - UI rules: `../docs/ui-ux-design-rules.md`
 
 
@@ -63,7 +64,7 @@ Lihat `docker-compose.yml` (Postgres 5432, Redis 6379).
 |-------|--------|
 | 0 Setup + shell UI + tokens + **light/dark** | **Done (shell)** |
 
-| 1 Auth | Pending |
+| 1 Auth | **Done** |
 | 2 Discovery API | Pending (UI demo data) |
 | 3+ RSVP / pay / organizer | Pending |
 
