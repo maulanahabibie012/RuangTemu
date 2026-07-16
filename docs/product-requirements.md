@@ -257,21 +257,21 @@ Selaras dengan schema di implementation plan:
 3. Event detail + RSVP **gratis**
 4. Event builder penyelenggara (publish/draft)
 5. My Tickets + QR e-tiket
-6. **Light (default) / Dark mode** — dua tema, toggle di Navbar
 
 ### P1 — Should Have
-7. Payment Midtrans (paid events + hold 15 menit)
-8. Check-in scanner
-9. Push notifications (+ email e-tiket)
-10. Chat per acara (Socket.io)
-11. Manajemen peserta + broadcast
+6. Payment Midtrans (paid events + hold 15 menit)
+7. Check-in scanner
+8. Push notifications (+ email e-tiket)
+9. Chat per acara (Socket.io)
+10. Manajemen peserta + broadcast
 
 ### P2 — Nice to Have
-12. Dashboard analytics
-13. Rating & review
-14. Gallery
-15. Report + Super Admin moderation
-16. Pusat bantuan (ticketing)
+11. Dashboard analytics
+12. Rating & review
+13. Gallery
+14. Report + Super Admin moderation
+15. Pusat bantuan (ticketing)
+16. Dark mode
 17. Bookmark/wishlist (bisa dinaikkan ke P1 jika dibutuhkan early)
 
 ---
