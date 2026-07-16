@@ -1,21 +1,35 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { CalendarPlus, Menu, Search, Ticket, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { CalendarPlus, Menu, Search, Ticket, X, User as UserIcon, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
+import { useAuthStore } from "@/stores/auth";
 
-
-const navLinks = [
+const publicLinks = [
   { href: "/", label: "Beranda" },
   { href: "/search", label: "Cari" },
+];
+
+const authLinks = [
   { href: "/my-tickets", label: "Tiket saya" },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const user = useAuthStore((state) => state.user);
+  const logout = useAuthStore((state) => state.logout);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navLinks = mounted && isAuthenticated ? [...publicLinks, ...authLinks] : publicLinks;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface-elevated/90 backdrop-blur-md">
@@ -55,11 +69,40 @@ export function Navbar() {
               Buat Event
             </Button>
           </Link>
-          <Link href="/login">
-            <Button variant="outline" size="sm">
-              Masuk
-            </Button>
-          </Link>
+          
+          {mounted && isAuthenticated ? (
+            <div className="flex items-center gap-2 ml-2">
+              <Link href="/profile">
+                <Button variant="ghost" size="sm" className="gap-1.5 text-muted hover:text-foreground">
+                  <UserIcon className="size-4" />
+                  <span className="max-w-[100px] truncate">{user?.name || 'Profil'}</span>
+                </Button>
+              </Link>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => logout()}
+                aria-label="Keluar"
+              >
+                <LogOut className="size-4" />
+              </Button>
+            </div>
+          ) : mounted ? (
+            <>
+              <Link href="/login">
+                <Button variant="ghost" size="sm">
+                  Masuk
+                </Button>
+              </Link>
+              <Link href="/register">
+                <Button size="sm">
+                  Daftar
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <div className="w-[120px] h-9 bg-muted/20 animate-pulse rounded-md ml-2" />
+          )}
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
@@ -102,14 +145,49 @@ export function Navbar() {
             <CalendarPlus className="size-4" />
             Buat Event
           </Link>
-          <Link
-            href="/login"
-            className="flex items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm font-medium text-foreground"
-            onClick={() => setOpen(false)}
-          >
-            <Ticket className="size-4" />
-            Masuk / Daftar
-          </Link>
+          
+          <div className="my-2 h-px bg-border" />
+          
+          {mounted && isAuthenticated ? (
+            <>
+              <Link
+                href="/profile"
+                className="flex items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm font-medium text-foreground hover:bg-surface"
+                onClick={() => setOpen(false)}
+              >
+                <UserIcon className="size-4" />
+                Profil Saya
+              </Link>
+              <button
+                type="button"
+                className="flex w-full items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm font-medium text-error hover:bg-error-light/50 text-left"
+                onClick={() => {
+                  logout();
+                  setOpen(false);
+                }}
+              >
+                <LogOut className="size-4" />
+                Keluar
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="flex items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm font-medium text-foreground hover:bg-surface"
+                onClick={() => setOpen(false)}
+              >
+                Masuk
+              </Link>
+              <Link
+                href="/register"
+                className="flex items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm font-medium text-primary hover:bg-surface"
+                onClick={() => setOpen(false)}
+              >
+                Daftar Akun
+              </Link>
+            </>
+          )}
         </nav>
       </div>
     </header>

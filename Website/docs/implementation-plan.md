@@ -198,7 +198,9 @@ Selaras `docs/ui-ux-design-rules.md` §1 Color & §10 Dark Mode:
 
 ---
 
-## Phase 1: Authentication & Profile (Sprint 2)
+## Phase 1: Authentication & Profile (Sprint 2) — ✅ COMPLETED
+
+*(Selesai: Semua API Auth, Middleware Next.js, Zustand Store, Interceptor Axios, Halaman Login/Register/Verify/Forgot/Profile terintegrasi penuh)*
 
 ### 1.1 Pages
 
@@ -545,7 +547,7 @@ users ──┬── events ──┬── registrations ── payments
 |--------|-------|-------------|
 | S1 | Setup | Next.js + NestJS + Prisma + Tailwind **+ light/dark theme** |
 
-| S2 | Auth | Cookie JWT, profil, role routes |
+| S2 | Auth | ✅ API JWT, profil, role routes, UI (Selesai) |
 | S3 | Discovery | Home, search, SSR event detail |
 | S4 | RSVP/Pay | Free+paid, Midtrans, e-tiket |
 | S5 | Organizer | Builder, peserta, check-in web |

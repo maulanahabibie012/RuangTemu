@@ -1,8 +1,18 @@
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+import { AppModule } from './app.module.js';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+    }),
+  );
 
   const origin = process.env.CORS_ORIGIN ?? 'http://localhost:3000';
   app.enableCors({
@@ -14,7 +24,6 @@ async function bootstrap() {
 
   const port = Number(process.env.PORT ?? 3001);
   await app.listen(port);
-  // eslint-disable-next-line no-console
   console.log(`RuangTemu API listening on http://localhost:${port}/api`);
 }
-bootstrap();
+void bootstrap();
