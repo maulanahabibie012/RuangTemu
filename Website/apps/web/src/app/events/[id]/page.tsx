@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import type { Event, EventCategory, EventStatus } from '@/types/event';
 import { getEvent, deleteEvent } from '@/lib/events-api';
+import { registerForEvent } from '@/lib/registrations-api';
 import { DEMO_EVENTS } from '@/lib/demo-events';
 import {
   CalendarDays,
@@ -73,6 +74,7 @@ export default function EventDetailPage() {
   const [error, setError] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [registering, setRegistering] = useState(false);
 
   const isOwner = !!(user && event && event.organizerId === user.id);
 
@@ -347,10 +349,33 @@ export default function EventDetailPage() {
 
               {/* Register Button */}
               <button
-                disabled={isFull || event.status !== 'ACTIVE'}
+                disabled={isFull || event.status !== 'ACTIVE' || registering || isOwner}
+                onClick={async () => {
+                  if (!user) {
+                    router.push('/login');
+                    return;
+                  }
+                  setRegistering(true);
+                  try {
+                    const reg = await registerForEvent(event.id);
+                    router.push(`/my-tickets/${reg.id}`);
+                  } catch (err) {
+                    alert(err instanceof Error ? err.message : 'Gagal mendaftar');
+                  } finally {
+                    setRegistering(false);
+                  }
+                }}
                 className="w-full py-3 px-6 bg-primary text-primary-fg rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isFull ? 'Event Penuh' : event.status !== 'ACTIVE' ? 'Event Tidak Tersedia' : 'Daftar Sekarang'}
+                {isFull
+                  ? 'Event Penuh'
+                  : event.status !== 'ACTIVE'
+                    ? 'Event Tidak Tersedia'
+                    : isOwner
+                      ? 'Event Anda'
+                      : registering
+                        ? 'Mendaftar...'
+                        : 'Daftar Sekarang'}
               </button>
             </div>
           </div>
